@@ -180,11 +180,34 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
+        {/* Bottom - Contact Info */}
         <div className="mt-16 border-t border-white/10 pt-8">
-          <p className="text-xs text-white/50">
-            &copy; {new Date().getFullYear()} AlgoMinds LLC. All Rights Reserved.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {/* Email */}
+            <div>
+              <p className="text-xs font-semibold tracking-widest text-white/90 uppercase mb-2">Email</p>
+              <a href="mailto:careers@algominds.live" className="text-sm text-white/80 hover:text-white transition-colors">
+                careers@algominds.live
+              </a>
+            </div>
+            {/* Phone */}
+            <div>
+              <p className="text-xs font-semibold tracking-widest text-white/90 uppercase mb-2">Phone</p>
+              <a href="tel:03007197859" className="text-sm text-white/80 hover:text-white transition-colors">
+                0300 7197859
+              </a>
+            </div>
+            {/* Address */}
+            <div>
+              <p className="text-xs font-semibold tracking-widest text-white/90 uppercase mb-2">Address</p>
+              <p className="text-sm text-white/80">Johar Town Rd, near Ayub Chowk, Trade Centre Block R Phase 2 Aitchison Society, Lahore, 54700</p>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8">
+            <p className="text-xs text-white/50">
+              &copy; {new Date().getFullYear()} AlgoMinds LLC. All Rights Reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
