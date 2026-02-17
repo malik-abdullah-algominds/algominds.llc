@@ -8,7 +8,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Algominds LLC | AI-Powered Software Solutions',
+  title: 'Algominds LLC - AI Solutions',
   description: 'Algominds LLC delivers cutting-edge software, AI-powered solutions, and digital transformation services that help businesses innovate faster and grow smarter.',
   generator: 'v0.app',
   icons: {
