@@ -10,58 +10,38 @@ export const metadata: Metadata = {
 
 const projects = [
   {
-    title: "Empowering enterprises with Adovvy's actionable AI",
-    client: "Adovvy",
-    tag: "AI",
-    metric: "94%",
-    metricLabel: "Improved customer satisfaction",
-    description: "We built an AI-powered analytics platform that transforms raw data into actionable business insights.",
+    title: "Co-creating a groundbreaking menstrual health platform for UNICEF",
+    client: "UNICEF",
+    category: "Education / Public Health",
+    description: "OKY is a groundbreaking menstrual health platform developed for UNICEF. We created the world's first period tracker app for girls, providing comprehensive period education and health support.",
+    image: "https://via.placeholder.com/600x400?text=UNICEF+Project",
   },
   {
-    title: "Transforming OT cybersecurity with OTNexus",
-    client: "OTNexus",
-    tag: "Cybersecurity",
-    metric: "95%",
-    metricLabel: "Improved security posture",
-    description: "A comprehensive cybersecurity solution for operational technology environments.",
+    title: "Building a connected fitness community",
+    client: "FitTogether",
+    category: "Social Networking",
+    description: "Founded by Scott Bowen, FitTogether is a fitness social network that connects athletes and wellness enthusiasts worldwide.",
+    image: "https://via.placeholder.com/600x400?text=FitTogether+Project",
   },
   {
-    title: "Revolutionizing healthcare with smart patient management",
-    client: "HealthTech Pro",
-    tag: "Healthcare",
-    metric: "40%",
-    metricLabel: "Reduced wait times",
-    description: "Digital transformation of patient management systems for modern healthcare facilities.",
+    title: "Revolutionizing pregnancy & parenthood connections",
+    client: "Bumpdate",
+    category: "Social Networking / Health & Wellness",
+    description: "Gabrielle Iorio Sylk envisioned a private social network connecting mothers. We brought Bumpdate to life—a comprehensive pregnancy and parenthood platform.",
+    image: "https://via.placeholder.com/600x400?text=Bumpdate+Project",
   },
   {
-    title: "Building the future of e-learning with EduSmart",
-    client: "EduSmart",
-    tag: "Education",
-    metric: "3x",
-    metricLabel: "Increase in engagement",
-    description: "An adaptive learning platform with AI-powered personalization and progress tracking.",
-  },
-  {
-    title: "Streamlining insurance claims with InsureFlow",
-    client: "InsureFlow",
-    tag: "Insurance",
-    metric: "80%",
-    metricLabel: "Automated claim processing",
-    description: "AI-powered document processing and fraud detection for insurance operations.",
-  },
-  {
-    title: "Enhancing fan engagement for SportsFan Pro",
-    client: "SportsFan Pro",
-    tag: "Sports",
-    metric: "2.5M",
-    metricLabel: "Active monthly users",
-    description: "A real-time analytics and fan engagement platform for sports organizations.",
+    title: "Secure HIPAA-Compliant Operations for Healthcare",
+    client: "Healthcare Provider",
+    category: "Manufacturing & Field Services",
+    description: "A comprehensive healthcare logistics and operations management system ensuring HIPAA compliance and field service optimization.",
+    image: "https://via.placeholder.com/600x400?text=Healthcare+Project",
   },
 ]
 
 export default function PortfolioPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-black">
       <Navigation />
       
       {/* Hero Section with Video Background */}
@@ -81,68 +61,65 @@ export default function PortfolioPage() {
         </video>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/45 md:bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col h-full">
-          {/* Main Content */}
-          <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16">
-            <div className="max-w-4xl">
-              {/* Main Heading */}
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-tight lg:leading-tight text-white mb-4 sm:mb-6 md:mb-8 tracking-tight">
-                Bringing vision to life
-              </h1>
+        <div className="relative z-10 flex flex-col h-full justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16">
+          <div className="max-w-3xl">
+            {/* Main Heading */}
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white mb-4 sm:mb-6 md:mb-8 tracking-tight">
+              Bringing vision to life
+            </h1>
 
-              {/* Subheading */}
-              <p className="text-sm xs:text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 md:mb-12 max-w-3xl leading-relaxed">
-                Step into a galaxy of 10+ groundbreaking projects—AI marvels, app innovations, and cloud conquests that propel startups, supercharge SMEs, and empower enterprises.
-              </p>
+            {/* Subheading */}
+            <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-12 md:mb-16 max-w-2xl leading-relaxed">
+              Step into a galaxy of 10+ groundbreaking projects—AI marvels, app innovations, and cloud conquests that propel startups, supercharge SMEs, and empower enterprises.
+            </p>
 
-              {/* CTA Button */}
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-indigo-600 font-bold text-sm sm:text-base rounded-full hover:bg-white/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-white/20 max-w-fit"
-              >
-                Schedule a discovery call
-              </Link>
-            </div>
+            {/* CTA Button */}
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 font-bold text-base rounded-full hover:bg-white/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl max-w-fit"
+            >
+              Schedule a discovery call
+            </Link>
           </div>
+        </div>
 
-          {/* Bottom Section with Featured Clients and Awards */}
-          <div className="relative z-10 bg-gradient-to-t from-black/70 md:from-black/60 to-transparent px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-10 md:py-12 lg:py-16">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {/* Featured Clients */}
-              <div className="col-span-1 sm:col-span-2 lg:col-span-1">
-                <p className="text-white/70 text-xs sm:text-sm font-semibold tracking-wide mb-4 sm:mb-6">
-                  Featured Clients
-                </p>
-                <div className="flex flex-wrap gap-3 sm:gap-4">
-                  <div className="text-white text-xs sm:text-sm opacity-75">UNICEF</div>
-                  <div className="text-white text-xs sm:text-sm opacity-75">University of Michigan</div>
-                  <div className="text-white text-xs sm:text-sm opacity-75">Domino's</div>
-                  <div className="text-white text-xs sm:text-sm opacity-75">Nestlé</div>
-                </div>
+        {/* Bottom Section with Featured Clients and Awards */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/80 to-transparent px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-16">
+            {/* Featured Clients */}
+            <div>
+              <p className="text-white/70 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6">
+                Featured Clients
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <span className="text-white text-sm sm:text-base opacity-75 font-medium">UNICEF</span>
+                <span className="text-white text-sm sm:text-base opacity-75 font-medium">University of Michigan</span>
+                <span className="text-white text-sm sm:text-base opacity-75 font-medium">Domino's</span>
+                <span className="text-white text-sm sm:text-base opacity-75 font-medium">Nestlé</span>
               </div>
+            </div>
 
-              {/* Awards & Partnerships */}
-              <div className="col-span-1 sm:col-span-2 lg:col-span-2 lg:text-right">
-                <p className="text-white/70 text-xs sm:text-sm font-semibold tracking-wide mb-4 sm:mb-6">
-                  Awards & Partnerships
-                </p>
-                <div className="flex flex-wrap gap-3 sm:gap-4 lg:justify-end">
-                  <div className="text-white text-xs sm:text-sm opacity-75">ISO Certified</div>
-                  <div className="text-white text-xs sm:text-sm opacity-75">Award Winner</div>
-                  <div className="text-white text-xs sm:text-sm opacity-75">Industry Partner</div>
-                </div>
+            {/* Awards & Partnerships */}
+            <div className="sm:text-right">
+              <p className="text-white/70 text-xs sm:text-sm font-semibold tracking-widest uppercase mb-6">
+                Awards & Partnerships
+              </p>
+              <div className="flex flex-wrap gap-4 sm:justify-end">
+                <span className="text-white text-sm sm:text-base opacity-75 font-medium">ISO Certified</span>
+                <span className="text-white text-sm sm:text-base opacity-75 font-medium">Award Winner</span>
+                <span className="text-white text-sm sm:text-base opacity-75 font-medium">Industry Partner</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Navigation Arrow */}
-        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
           <svg
-            className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+            className="w-6 h-6 text-white"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -158,51 +135,61 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Grid Section */}
-      <section className="py-24 sm:py-32 bg-white">
+      <section className="py-24 sm:py-32 bg-black">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <div className="mb-16 sm:mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
               Our Latest Work
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl">
+            <p className="text-lg sm:text-xl text-white/70 max-w-3xl">
               Explore how we've helped startups, SMEs, and global leaders turn vision into market success.
             </p>
           </div>
 
           {/* Projects Grid */}
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-8 lg:grid-cols-2">
             {projects.map((project, index) => (
               <Link
                 key={index}
-                href="/contact"
-                className="group relative h-80 sm:h-96 overflow-hidden rounded-2xl cursor-pointer"
+                href="#"
+                className="group relative overflow-hidden rounded-xl cursor-pointer"
               >
-                {/* Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 opacity-80" />
+                {/* Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-black/40" />
                 
                 {/* Hover Effect */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
                 
-                {/* Tag */}
+                {/* Category Tag */}
                 <div className="absolute right-4 top-4 z-10">
-                  <span className="rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 text-xs sm:text-sm font-semibold text-white border border-white/30">
-                    {project.tag}
+                  <span className="rounded-full bg-white/15 backdrop-blur-md px-4 py-2 text-xs sm:text-sm font-semibold text-white border border-white/30">
+                    {project.category}
                   </span>
                 </div>
 
-                {/* Content */}
-                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{project.title}</h3>
-                  <p className="text-sm text-white/80 mb-4 line-clamp-2">{project.description}</p>
+                {/* Content Container */}
+                <div className="relative p-8 sm:p-10 h-full min-h-96 flex flex-col justify-end">
+                  {/* Client Badge */}
+                  <div className="mb-4">
+                    <p className="text-xs text-white/60 uppercase tracking-widest font-semibold">{project.client}</p>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 leading-tight group-hover:text-blue-300 transition-colors">
+                    {project.title}
+                  </h3>
                   
+                  {/* Description */}
+                  <p className="text-sm sm:text-base text-white/80 mb-6 line-clamp-3">
+                    {project.description}
+                  </p>
+
+                  {/* Footer */}
                   <div className="border-t border-white/20 pt-4 flex items-center justify-between">
-                    <span className="text-xs sm:text-sm font-medium text-white/80">{project.client}</span>
-                    <div className="flex items-center gap-2 sm:gap-4">
-                      <div className="text-right">
-                        <span className="text-xl sm:text-2xl font-bold text-white">{project.metric}</span>
-                        <p className="text-xs text-white/70 leading-none">{project.metricLabel}</p>
-                      </div>
-                    </div>
+                    <span className="text-xs text-white/60">View Project</span>
+                    <svg className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </div>
               </Link>
@@ -212,17 +199,22 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-[#3B5BDB] via-[#5F3DC4] to-[#AE3EC9] py-20">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      <section className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 py-24 sm:py-32 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             Ready to Be Our Next Success Story?
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
+          <p className="text-lg sm:text-xl text-white/90 mb-10">
             Let's discuss how we can help transform your vision into market success.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center mt-8 px-8 py-3 rounded-full bg-white text-[#5F3DC4] font-bold hover:bg-white/90 transition-all"
+            className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-white text-blue-600 font-bold text-lg hover:bg-white/90 transition-all transform hover:scale-105 shadow-xl hover:shadow-2xl"
           >
             Start Your Project
           </Link>
