@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
+        url: '/algomindslogo.png',
+        type: 'image/png',
+      },
+      {
         url: '/algomind-tab.png',
         type: 'image/png',
       },
