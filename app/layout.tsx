@@ -56,6 +56,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/algomindslogo.png?v=2" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/algomindslogo.png?v=2" />
+        <link rel="apple-touch-icon" href="/algomindslogo.png?v=2" />
+        <link rel="shortcut icon" href="/algomindslogo.png?v=2" />
+      </head>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
