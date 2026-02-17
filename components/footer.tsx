@@ -16,7 +16,7 @@ const footerColumns = {
     { label: "DevOps", href: "/services" },
     { label: "Cloud services", href: "/services" },
   ],
-  ai: [
+  ai: [ 
     { label: "Generative AI", href: "/services" },
     { label: "AI Agents", href: "/services" },
     { label: "Machine learning services", href: "/services" },

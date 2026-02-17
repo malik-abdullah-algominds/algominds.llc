@@ -48,7 +48,7 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
           ? "bg-[#0B1220]/95 backdrop-blur-xl shadow-2xl shadow-[#00E0C6]/10 border-b border-[#00E0C6]/20"
           : "bg-gradient-to-b from-[#0B1220]/80 via-[#0F1A2E]/70 to-[#0B1220]/60 backdrop-blur-lg border-b border-[#00E0C6]/10"
@@ -88,23 +88,53 @@ export function Navigation() {
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
-              className="w-64 border-[#00E0C6]/20 bg-[#0B1220]/95 backdrop-blur-xl shadow-2xl shadow-[#00E0C6]/10 animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
+              className="w-full max-w-3xl border-[#00E0C6]/20 bg-white/95 backdrop-blur-xl shadow-2xl shadow-black/30 animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 rounded-xl overflow-hidden p-0"
             >
-              {expertiseItems.map((item) => (
-                <DropdownMenuItem
-                  key={item.href}
-                  asChild
-                  className="group cursor-pointer rounded-lg mx-1 my-0.5 focus:bg-[#00E0C6]/10 focus:text-[#00E0C6]"
+              {/* Multi-column content */}
+              <div className="flex">
+                {/* Left Column - Services */}
+                <div className="flex-1 p-6 border-r border-gray-200">
+                  <h3 className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Services</h3>
+                  <div className="space-y-3">
+                    {expertiseItems.slice(0, 5).map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block text-sm text-gray-700 hover:text-[#00E0C6] transition-colors duration-200 font-medium"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Column - More Services */}
+                <div className="flex-1 p-6">
+                  <h3 className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">More Services</h3>
+                  <div className="space-y-3">
+                    {expertiseItems.slice(5).map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block text-sm text-gray-700 hover:text-[#00E0C6] transition-colors duration-200 font-medium"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Footer */}
+              <div className="bg-gradient-to-r from-[#D946EF] to-[#EC4899] px-6 py-4 flex items-center justify-between">
+                <span className="text-white font-semibold">Ready to transform your business?</span>
+                <Link
+                  href="/contact"
+                  className="bg-white text-[#D946EF] px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
                 >
-                  <Link
-                    href={item.href}
-                    className="flex items-center text-foreground/80 transition-all duration-300 hover:text-[#00E0C6] group-focus:text-[#00E0C6]"
-                  >
-                    <span className="inline-block mr-2 h-1.5 w-1.5 rounded-full bg-[#00E0C6] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    {item.label}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
+                  Contact Us
+                </Link>
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -128,23 +158,36 @@ export function Navigation() {
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
-              className="w-56 border-[#00E0C6]/20 bg-[#0B1220]/95 backdrop-blur-xl shadow-2xl shadow-[#00E0C6]/10 animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95"
+              className="w-full max-w-2xl border-[#00E0C6]/20 bg-white/95 backdrop-blur-xl shadow-2xl shadow-black/30 animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 rounded-xl overflow-hidden p-0"
             >
-              {engagementItems.map((item) => (
-                <DropdownMenuItem
-                  key={item.href}
-                  asChild
-                  className="group cursor-pointer rounded-lg mx-1 my-0.5 focus:bg-[#00E0C6]/10 focus:text-[#00E0C6]"
+              {/* Content */}
+              <div className="flex">
+                <div className="flex-1 p-6">
+                  <h3 className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Engagement Models</h3>
+                  <div className="space-y-3">
+                    {engagementItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block text-sm text-gray-700 hover:text-[#00E0C6] transition-colors duration-200 font-medium"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Footer */}
+              <div className="bg-gradient-to-r from-[#00E0C6] to-[#00A89B] px-6 py-4 flex items-center justify-between">
+                <span className="text-[#0B1220] font-semibold">Choose the right engagement model for your project</span>
+                <Link
+                  href="/contact"
+                  className="bg-[#0B1220] text-[#00E0C6] px-4 py-2 rounded-lg font-semibold hover:bg-gray-900 transition-colors duration-200"
                 >
-                  <Link
-                    href={item.href}
-                    className="flex items-center text-foreground/80 transition-all duration-300 hover:text-[#00E0C6] group-focus:text-[#00E0C6]"
-                  >
-                    <span className="inline-block mr-2 h-1.5 w-1.5 rounded-full bg-[#00E0C6] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    {item.label}
-                  </Link>
-                </DropdownMenuItem>
-              ))}
+                  Get Started
+                </Link>
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
 

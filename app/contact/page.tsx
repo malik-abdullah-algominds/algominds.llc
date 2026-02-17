@@ -25,39 +25,56 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-black">
       <Navigation />
       
-      {/* Main Contact Section */}
-      <section className="pt-32 pb-24">
+      {/* Main Contact Section with Video Background */}
+      <section className="relative min-h-screen pt-24 pb-24 overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 -z-10">
+          {/* Video Background */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="https://origamistudios.us/wp-content/uploads/2025/11/Contact.mp4" type="video/mp4" />
+          </video>
+
+          {/* Light Overlay - only on left side for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+        </div>
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center min-h-[600px]">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start min-h-screen">
             {/* Left Side - Content */}
-            <div>
-              <h1 className="text-balance text-4xl font-bold tracking-tight text-[#1a1a1a] sm:text-5xl">
+            <div className="pt-16">
+              <h1 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
                 Ready to scale your business with expert software solutions?
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-[#666]">
+              <p className="mt-6 text-lg leading-relaxed text-white/80">
                 Connect with our experts to learn more about our software development services and get a quote within 24 hours.
               </p>
 
               {/* Next Steps */}
               <div className="mt-12">
-                <p className="font-semibold text-[#1a1a1a] mb-6">Next steps:</p>
-                <div className="flex items-center gap-8 flex-wrap">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5B5BFF] text-white font-bold text-sm">1</div>
-                    <p className="text-sm text-[#666] text-center">Expert call setup</p>
+                <p className="font-semibold text-white mb-8">Next steps:</p>
+                <div className="flex items-start gap-6 flex-col md:flex-row">
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#5B5BFF] text-white font-bold text-lg">1</div>
+                    <p className="text-sm text-white/70 text-center">Expert call setup</p>
                   </div>
-                  <div className="hidden sm:block w-8 h-0.5 bg-[#ddd]"></div>
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5B5BFF] text-white font-bold text-sm">2</div>
-                    <p className="text-sm text-[#666] text-center">NDA, if required</p>
+                  <div className="hidden md:block h-px w-8 bg-white/30 mt-6" />
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#5B5BFF] text-white font-bold text-lg">2</div>
+                    <p className="text-sm text-white/70 text-center">NDA, if required</p>
                   </div>
-                  <div className="hidden sm:block w-8 h-0.5 bg-[#ddd]"></div>
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#5B5BFF] text-white font-bold text-sm">3</div>
-                    <p className="text-sm text-[#666] text-center">Detailed proposal</p>
+                  <div className="hidden md:block h-px w-8 bg-white/30 mt-6" />
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#5B5BFF] text-white font-bold text-lg">3</div>
+                    <p className="text-sm text-white/70 text-center">Detailed proposal</p>
                   </div>
                 </div>
               </div>
@@ -65,18 +82,22 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className="mt-12 space-y-4">
                 <div className="flex items-center gap-3">
-                  <Mail className="h-5 w-5 text-[#5B5BFF]" />
-                  <span className="text-[#666]">info@origamistudios.us</span>
+                  <Mail className="h-5 w-5 text-[#5B5BFF] flex-shrink-0" />
+                  <a href="mailto:info@algominds.com" className="text-white/80 hover:text-white transition-colors">
+                    info@algominds.com
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-[#5B5BFF]" />
-                  <span className="text-[#666]">+1 (888) 405-8645</span>
+                  <Phone className="h-5 w-5 text-[#5B5BFF] flex-shrink-0" />
+                  <a href="tel:+18884058645" className="text-white/80 hover:text-white transition-colors">
+                    +1 (888) 405-8645
+                  </a>
                 </div>
               </div>
             </div>
 
             {/* Right Side - Form */}
-            <div className="rounded-3xl bg-[#1a1a1a] p-8 sm:p-12 text-white">
+            <div className="rounded-3xl bg-[#1a1a1a]/95 backdrop-blur-md p-8 sm:p-12 text-white sticky top-24">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/20">
@@ -96,40 +117,40 @@ export default function ContactPage() {
               ) : (
                 <>
                   <h2 className="mb-8 text-2xl font-semibold text-white">Get an expert consultation in 24 hours.</h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-3">
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="space-y-2">
                       <Input
                         name="name"
                         placeholder="Full name"
                         required
-                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12"
+                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a]"
                       />
                     </div>
                     
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <Input
                         name="email"
                         type="email"
                         placeholder="Email"
                         required
-                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12"
+                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a]"
                       />
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <Textarea
                         name="message"
                         placeholder="How can we help you?"
                         rows={4}
                         required
-                        className="rounded-2xl bg-white text-[#1a1a1a] placeholder:text-[#999] border-0"
+                        className="rounded-2xl bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a]"
                       />
                     </div>
 
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full gap-2 rounded-full bg-[#5B5BFF] hover:bg-[#4a4aff] h-12 text-white font-semibold"
+                      className="w-full gap-2 rounded-full bg-[#5B5BFF] hover:bg-[#4a4aff] h-12 text-white font-semibold transition-all duration-300"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
