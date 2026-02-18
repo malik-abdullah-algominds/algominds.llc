@@ -30,7 +30,7 @@ export default function ContactPage() {
       
       {/* Main Contact Section with Video Background */}
       <section className="relative min-h-screen pt-24 pb-24 overflow-hidden">
-        {/* Background Video */}
+        {/* Background Video - FULLY VISIBLE */}
         <div className="absolute inset-0 -z-10">
           {/* Video Background */}
           <video
@@ -44,11 +44,8 @@ export default function ContactPage() {
             Your browser does not support the video tag.
           </video>
 
-          {/* Gradient Overlay - lighter for better video visibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/40" />
-          
-          {/* Additional overlay only on left side for text readability */}
-          <div className="absolute left-0 top-0 w-1/2 h-full bg-gradient-to-r from-black/70 to-transparent" />
+          {/* Minimal overlay only on form area for readability */}
+          <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-black/40 via-black/20 to-transparent" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -107,7 +104,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right Side - Form */}
-            <div className="rounded-3xl bg-[#1a1a1a]/80 backdrop-blur-xl p-8 sm:p-12 text-white sticky top-24 border border-white/10 shadow-2xl">
+            <div className="rounded-3xl bg-black/50 backdrop-blur-md p-8 sm:p-12 text-white sticky top-24 border border-white/20 shadow-2xl">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/20">
@@ -118,7 +115,7 @@ export default function ContactPage() {
                     Thank you for reaching out. We&apos;ll get back to you within 24 hours.
                   </p>
                   <Button 
-                    className="mt-6 rounded-full bg-white text-[#1a1a1a] hover:bg-white/90"
+                    className="mt-6 rounded-full bg-white text-black hover:bg-white/90"
                     onClick={() => setIsSubmitted(false)}
                   >
                     Send Another Message
@@ -127,14 +124,14 @@ export default function ContactPage() {
               ) : (
                 <>
                   <h2 className="mb-2 text-3xl font-bold text-white">Get an expert consultation in 24 hours.</h2>
-                  <p className="mb-8 text-white/70">Connect with our team to discuss your project needs.</p>
+                  <p className="mb-8 text-white/90">Connect with our team to discuss your project needs.</p>
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="space-y-2">
                       <Input
                         name="name"
                         placeholder="Full name"
                         required
-                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a] font-medium"
+                        className="rounded-full bg-white text-black placeholder:text-gray-500 border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-black font-medium"
                       />
                     </div>
                     
@@ -144,7 +141,7 @@ export default function ContactPage() {
                         type="email"
                         placeholder="Email"
                         required
-                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a] font-medium"
+                        className="rounded-full bg-white text-black placeholder:text-gray-500 border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-black font-medium"
                       />
                     </div>
 
@@ -154,7 +151,7 @@ export default function ContactPage() {
                         placeholder="How can we help you?"
                         rows={4}
                         required
-                        className="rounded-2xl bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a] font-medium resize-none"
+                        className="rounded-2xl bg-white text-black placeholder:text-gray-500 border-0 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-black font-medium resize-none"
                       />
                     </div>
 
@@ -176,12 +173,12 @@ export default function ContactPage() {
                   </form>
 
                   {/* Badges */}
-                  <div className="mt-8 pt-8 border-t border-white/20">
+                  <div className="mt-8 pt-8 border-t border-white/30">
                     <div className="flex flex-col gap-6">
                       <div className="flex items-center gap-4">
                         <div className="flex-shrink-0">
                           <div className="flex h-12 w-12 items-center justify-center rounded bg-white">
-                            <span className="text-xs font-bold text-[#1a1a1a]">MS</span>
+                            <span className="text-xs font-bold text-black">MS</span>
                           </div>
                         </div>
                         <div>
@@ -192,7 +189,7 @@ export default function ContactPage() {
                       <div className="flex items-center gap-4">
                         <div className="flex-shrink-0">
                           <div className="flex h-12 w-12 items-center justify-center rounded bg-white">
-                            <span className="text-xs font-bold text-[#1a1a1a]">★★★★★</span>
+                            <span className="text-xs font-bold text-black">★★★★★</span>
                           </div>
                         </div>
                         <div>
