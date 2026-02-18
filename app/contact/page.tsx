@@ -41,10 +41,14 @@ export default function ContactPage() {
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="https://origamistudios.us/wp-content/uploads/2025/11/Contact.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
 
-          {/* Light Overlay - only on left side for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+          {/* Gradient Overlay - optimized for better video visibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+          
+          {/* Additional semi-transparent overlay on form area */}
+          <div className="absolute right-0 top-0 w-1/2 h-full bg-black/20" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -103,7 +107,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right Side - Form */}
-            <div className="rounded-3xl bg-[#1a1a1a]/95 backdrop-blur-md p-8 sm:p-12 text-white sticky top-24">
+            <div className="rounded-3xl bg-[#1a1a1a]/80 backdrop-blur-xl p-8 sm:p-12 text-white sticky top-24 border border-white/10 shadow-2xl">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/20">
@@ -122,14 +126,15 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <>
-                  <h2 className="mb-8 text-2xl font-semibold text-white">Get an expert consultation in 24 hours.</h2>
+                  <h2 className="mb-2 text-3xl font-bold text-white">Get an expert consultation in 24 hours.</h2>
+                  <p className="mb-8 text-white/70">Connect with our team to discuss your project needs.</p>
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="space-y-2">
                       <Input
                         name="name"
                         placeholder="Full name"
                         required
-                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a]"
+                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a] font-medium"
                       />
                     </div>
                     
@@ -139,7 +144,7 @@ export default function ContactPage() {
                         type="email"
                         placeholder="Email"
                         required
-                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a]"
+                        className="rounded-full bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 h-12 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a] font-medium"
                       />
                     </div>
 
@@ -149,14 +154,14 @@ export default function ContactPage() {
                         placeholder="How can we help you?"
                         rows={4}
                         required
-                        className="rounded-2xl bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a]"
+                        className="rounded-2xl bg-white text-[#1a1a1a] placeholder:text-[#999] border-0 focus:ring-2 focus:ring-[#5B5BFF] focus:ring-offset-2 focus:ring-offset-[#1a1a1a] font-medium resize-none"
                       />
                     </div>
 
                     <Button 
                       type="submit" 
                       size="lg" 
-                      className="w-full gap-2 rounded-full bg-[#5B5BFF] hover:bg-[#4a4aff] h-12 text-white font-semibold transition-all duration-300"
+                      className="w-full gap-2 rounded-full bg-[#5B5BFF] hover:bg-[#4a4aff] h-12 text-white font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#5B5BFF]/50"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
