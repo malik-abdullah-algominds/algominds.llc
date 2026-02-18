@@ -44,11 +44,11 @@ export default function ContactPage() {
             Your browser does not support the video tag.
           </video>
 
-          {/* Gradient Overlay - optimized for better video visibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+          {/* Gradient Overlay - lighter for better video visibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/40" />
           
-          {/* Additional semi-transparent overlay on form area */}
-          <div className="absolute right-0 top-0 w-1/2 h-full bg-black/20" />
+          {/* Additional overlay only on left side for text readability */}
+          <div className="absolute left-0 top-0 w-1/2 h-full bg-gradient-to-r from-black/70 to-transparent" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
