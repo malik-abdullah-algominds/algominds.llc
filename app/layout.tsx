@@ -30,31 +30,26 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/algomindslogo.png',
+        url: '/favicon.ico',
+        type: 'image/x-icon',
+      },
+      {
+        url: '/favicon-32x32.png',
         type: 'image/png',
+        sizes: '32x32',
       },
       {
-        url: '/algomind-tab.png',
+        url: '/favicon-16x16.png',
         type: 'image/png',
-      },
-      {
-        url: '/logo.png',
-        type: 'image/png',
-      },
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        sizes: '16x16',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: [
+      {
+        url: '/apple-touch-icon.png',
+        sizes: '180x180',
+      },
+    ],
   },
   openGraph: {
     title: "AlgoMinds LLC | AI & Software Solutions",
@@ -101,10 +96,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/algomindslogo.png?v=2" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/algomindslogo.png?v=2" />
-        <link rel="apple-touch-icon" href="/algomindslogo.png?v=2" />
-        <link rel="shortcut icon" href="/algomindslogo.png?v=2" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="theme-color" content="#0a0a0a" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -113,7 +109,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "AlgoMinds LLC",
               url: "https://algominds.live",
-              logo: "https://algominds.live/algomindslogo.png",
+              logo: "https://algominds.live/favicon-32x32.png",
               sameAs: [
                 "https://www.linkedin.com/company/algominds",
               ],
