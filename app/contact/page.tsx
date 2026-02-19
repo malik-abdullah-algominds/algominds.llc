@@ -25,7 +25,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-transparent">
       <Navigation />
       
       {/* Main Contact Section with Video Background */}
@@ -38,14 +38,11 @@ export default function ContactPage() {
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-contain object-center pointer-events-none"
           >
             <source src="https://origamistudios.us/wp-content/uploads/2025/11/Contact.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-
-          {/* Minimal overlay only on form area for readability */}
-          <div className="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-black/40 via-black/20 to-transparent" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
