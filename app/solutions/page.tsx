@@ -55,19 +55,23 @@ export default function SolutionsPage() {
       
       {/* Hero Section - full visible background image */}
       <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
-        {/* Background image - fully visible */}
-        <div className="absolute inset-0 -z-10 flex items-center justify-center">
-          <img
-            src="https://origamistudios.us/wp-content/uploads/2025/10/opt1-5-min.jpg"
-            alt="Solutions background"
-            className="max-w-none w-auto h-full object-contain object-center"
+        {/* Background image - using background layer for consistent stacking */}
+        <div className="absolute inset-0 -z-10">
+          <div
+            className="w-full h-full"
+            style={{
+              backgroundImage: "url('https://origamistudios.us/wp-content/uploads/2025/10/opt1-5-min.jpg')",
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+            }}
           />
         </div>
 
         {/* Subtle overlay for text readability */}
-        <div className="absolute inset-0 -z-5 bg-black/30" />
+        <div className="absolute inset-0 z-0 bg-black/30" />
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-balance text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
               Transform your industry with our solutions
