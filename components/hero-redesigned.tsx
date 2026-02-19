@@ -18,7 +18,7 @@ export function HeroRedesigned() {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source
-          src="https://origamistudios.us/wp-content/uploads/2026/01/Redefine-scale-and-multiply.mp4"
+          src="https://cdn.prod.website-files.com/6719ad0ceed6d5aa24a83d61%2F696ecc1f3ff5304a4fb2789b_Hero-video%20%281%29_mp4.mp4"
           type="video/mp4"
         />
       </video>
