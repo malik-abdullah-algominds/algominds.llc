@@ -53,18 +53,33 @@ export default function SolutionsPage() {
     <main className="min-h-screen bg-white">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#3B5BDB] via-[#5F3DC4] to-[#AE3EC9] pt-32 pb-20">
+      {/* Hero Section - full visible background image */}
+      <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+        {/* Background image - fully visible */}
+        <div className="absolute inset-0 -z-10 flex items-center justify-center">
+          <img
+            src="https://origamistudios.us/wp-content/uploads/2025/10/opt1-5-min.jpg"
+            alt="Solutions background"
+            className="max-w-none w-auto h-full object-contain object-center"
+          />
+        </div>
+
+        {/* Subtle overlay for text readability */}
+        <div className="absolute inset-0 -z-5 bg-black/30" />
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Tailored software development services
+            <h1 className="text-balance text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Transform your industry with our solutions
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-white/80">
-              We have partnered with businesses across the globe in diverse industries providing them 
-              custom software development services that drive growth and innovation. Our professionals 
-              bring the best knowledge to deliver IT services for business that meet your unique challenges and goals.
+            <p className="mt-6 text-lg leading-relaxed text-white/90">
+              Discover solutions crafted with Microsoft AI Cloud and AWS to empower your startup, SME, or enterprise.
             </p>
+            <div className="mt-8">
+              <Button size="lg" className="rounded-full bg-white text-[#0B1220] px-6 py-3">
+                <Link href="/contact">Schedule a discovery call</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
