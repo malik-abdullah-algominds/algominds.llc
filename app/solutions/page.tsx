@@ -54,22 +54,15 @@ export default function SolutionsPage() {
       <Navigation />
       
       {/* Hero Section - full visible background image */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
-        {/* Background image - using background layer for consistent stacking */}
-        <div className="absolute inset-0 -z-10">
-            <div
-              className="w-full h-full"
-              style={{
-                backgroundImage: "url('https://origamistudios.us/wp-content/uploads/2025/10/opt1-5-min.jpg')",
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-              }}
-            />
-        </div>
-
-        {/* Subtle overlay for text readability */}
-        <div className="absolute inset-0 z-0 bg-black/45" />
+      <section 
+        className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-center bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: "url('https://origamistudios.us/wp-content/uploads/2025/10/opt1-5-min.jpg')",
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-black/35 z-0" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
