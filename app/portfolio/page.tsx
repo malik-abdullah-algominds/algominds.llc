@@ -67,12 +67,12 @@ export default function PortfolioPage() {
         <div className="relative z-10 flex flex-col h-full justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16">
           <div className="max-w-3xl">
             {/* Main Heading */}
-            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-white mb-4 sm:mb-6 md:mb-8 tracking-tight">
+            <h1 className="mb-4 text-4xl font-bold leading-tight tracking-tight text-white sm:mb-6 sm:text-5xl md:mb-8 md:text-6xl lg:text-8xl">
               Bringing vision to life
             </h1>
 
             {/* Subheading */}
-            <p className="text-base xs:text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-12 md:mb-16 max-w-2xl leading-relaxed">
+            <p className="mb-8 max-w-2xl text-base leading-relaxed text-white/90 sm:mb-12 sm:text-lg md:mb-16 md:text-2xl">
               Step into a galaxy of 10+ groundbreaking projects—AI marvels, app innovations, and cloud conquests that propel startups, supercharge SMEs, and empower enterprises.
             </p>
 
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
         </div>
 
         {/* Bottom Section with Featured Clients and Awards */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/80 to-transparent px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16">
+        <div className="relative z-10 bg-gradient-to-t from-black/80 to-transparent px-4 py-8 sm:absolute sm:bottom-0 sm:left-0 sm:right-0 sm:px-6 sm:py-16 md:px-8 lg:px-12">
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-16">
             {/* Featured Clients */}
             <div>
@@ -117,7 +117,7 @@ export default function PortfolioPage() {
         </div>
 
         {/* Navigation Arrow */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 animate-bounce sm:bottom-20 sm:block">
           <svg
             className="w-6 h-6 text-white"
             fill="none"

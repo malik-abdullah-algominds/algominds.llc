@@ -29,7 +29,7 @@ export default function ContactPage() {
       <Navigation />
       
       {/* Main Contact Section with Video Background */}
-      <section className="relative min-h-screen pt-24 pb-24 overflow-hidden">
+      <section className="relative overflow-hidden pb-16 pt-24 sm:pb-24">
         {/* Background Video - FULLY VISIBLE */}
         <div className="absolute inset-0 -z-10">
           {/* Video Background */}
@@ -46,9 +46,9 @@ export default function ContactPage() {
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start min-h-screen">
+          <div className="grid items-start gap-10 lg:min-h-screen lg:grid-cols-2 lg:gap-16">
             {/* Left Side - Content */}
-            <div className="pt-16">
+            <div className="pt-6 sm:pt-12 lg:pt-16">
               <h1 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
                 Ready to scale your business with expert software solutions?
               </h1>
@@ -101,7 +101,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right Side - Form */}
-            <div className="rounded-3xl bg-black/50 backdrop-blur-md p-8 sm:p-12 text-white sticky top-24 border border-white/20 shadow-2xl">
+            <div className="rounded-3xl border border-white/20 bg-black/50 p-6 text-white shadow-2xl backdrop-blur-md sm:p-8 lg:sticky lg:top-24 lg:p-12">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/20">

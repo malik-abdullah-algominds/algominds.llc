@@ -92,8 +92,8 @@ export default function ResourcesPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 flex flex-col justify-center min-h-[calc(100vh-4rem)]">
-          <h1 className="text-balance text-5xl font-bold tracking-tight text-white sm:text-6xl max-w-2xl">
+        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col justify-center px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+          <h1 className="max-w-2xl text-balance text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Blogs & articles
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/80">
@@ -130,7 +130,6 @@ export default function ResourcesPage() {
                   <p className="text-sm text-muted-foreground">{featuredArticles[0].role}</p>
                 </div>
               </div>
-
               <div className="flex gap-6 text-sm text-muted-foreground">
                 <span>{featuredArticles[0].readTime}</span>
                 <span>Published date: {featuredArticles[0].date}</span>
@@ -153,7 +152,7 @@ export default function ResourcesPage() {
           </div>
 
           {/* Navigation */}
-          <div className="mt-12 flex justify-between items-center">
+          <div className="mt-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
             <h3 className="text-2xl font-bold text-foreground">Featured articles</h3>
             <div className="flex gap-4">
               <button className="rounded-full bg-gray-100 p-3 hover:bg-gray-200">

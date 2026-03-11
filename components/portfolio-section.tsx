@@ -80,7 +80,7 @@ export function PortfolioSection() {
           {projects.slice(0, 2).map((project) => (
             <div
               key={project.title}
-              className="group relative h-[500px] overflow-hidden rounded-2xl"
+              className="group relative h-[360px] overflow-hidden rounded-2xl sm:h-[500px]"
             >
               <img
                 src={project.image || "/placeholder.svg"}

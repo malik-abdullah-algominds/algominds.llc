@@ -22,7 +22,7 @@ const stats = [
   { value: "15+", label: "Years of experience" },
   { value: "200+", label: "Expert engineers" },
   { value: "100+", label: "Clients served" },
-  { value: "$300M+", label: "Client value delivered" },
+  { value: "$3M+", label: "Client value delivered" },
 ]
 
 export default function AboutPage() {

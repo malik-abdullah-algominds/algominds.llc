@@ -39,7 +39,7 @@ export function SolutionsCarousel() {
   const activeSolution = solutions[activeIndex]
 
   return (
-    <section className="relative bg-black min-h-screen overflow-hidden">
+    <section className="relative min-h-[100svh] overflow-hidden bg-black">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-700"
@@ -51,7 +51,7 @@ export function SolutionsCarousel() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 w-full">
           {/* Left Content */}
           <div className="flex flex-col justify-center">
@@ -75,13 +75,13 @@ export function SolutionsCarousel() {
 
             {/* Solution Content */}
             <div>
-              <h2 className="text-5xl font-bold text-white mb-6 max-w-xl">
+              <h2 className="mb-6 max-w-xl text-4xl font-bold text-white sm:text-5xl">
                 {activeSolution.title}
               </h2>
-              <p className="text-2xl font-semibold text-white mb-6 max-w-xl leading-tight">
+              <p className="mb-6 max-w-xl text-xl font-semibold leading-tight text-white sm:text-2xl">
                 {activeSolution.subtitle}
               </p>
-              <p className="text-lg text-white/80 max-w-lg leading-relaxed">
+              <p className="max-w-lg text-base leading-relaxed text-white/80 sm:text-lg">
                 {activeSolution.description}
               </p>
             </div>

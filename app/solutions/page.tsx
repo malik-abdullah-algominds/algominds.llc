@@ -58,7 +58,6 @@ export default function SolutionsPage() {
         className="relative min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-center bg-cover bg-no-repeat"
         style={{
           backgroundImage: "url('https://origamistudios.us/wp-content/uploads/2025/10/opt1-5-min.jpg')",
-          backgroundAttachment: 'fixed',
         }}
       >
         {/* Overlay for text readability */}
@@ -66,7 +65,7 @@ export default function SolutionsPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <h1 className="text-balance text-6xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl leading-tight">
+            <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-8xl">
               Transform your industry with our solutions
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-white/90 max-w-2xl">
@@ -79,17 +78,17 @@ export default function SolutionsPage() {
             </div>
 
             {/* Clients & Awards row */}
-            <div className="mt-12 flex items-center justify-between text-white">
+            <div className="mt-12 flex flex-col gap-8 text-white lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <p className="text-sm font-semibold mb-4">Featured Clients</p>
-                <div className="flex items-center gap-6 text-white/90">
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-white/90">
                   <span className="font-bold">unicef</span>
                   <span className="font-bold">University of Michigan</span>
                   <span className="font-bold">Domino's</span>
                 </div>
               </div>
 
-              <div className="text-right">
+              <div className="lg:text-right">
                 <p className="text-sm font-semibold mb-2">Awards & Partnerships</p>
                 <div className="text-white/90">Clutch • Microsoft AI Cloud Partner</div>
               </div>

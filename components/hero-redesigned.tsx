@@ -7,7 +7,7 @@ export function HeroRedesigned() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
+    <section className="relative flex w-full min-h-[100svh] flex-col overflow-hidden">
       {/* Video Background */}
       <video
         ref={videoRef}
@@ -27,24 +27,24 @@ export function HeroRedesigned() {
       <div className="absolute inset-0 bg-black/45 md:bg-black/40"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col h-full">
+      <div className="relative z-10 flex h-full flex-col">
         {/* Main Content */}
-        <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16">
+        <div className="flex flex-1 flex-col justify-start px-4 pb-8 pt-24 sm:px-6 sm:pb-10 sm:pt-28 md:justify-center md:px-8 md:py-16 lg:px-12">
           <div className="max-w-4xl">
             {/* Main Heading */}
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-tight lg:leading-tight text-white mb-4 sm:mb-6 md:mb-8 tracking-tight">
+            <h1 className="mb-4 text-4xl font-bold leading-tight tracking-tight text-white sm:mb-6 sm:text-5xl md:mb-8 md:text-6xl lg:text-7xl">
               Redefine, scale, and multiply your business potential
             </h1>
 
             {/* Subheading */}
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 md:mb-12 max-w-2xl leading-relaxed">
+            <p className="mb-6 max-w-2xl text-base leading-relaxed text-white/90 sm:mb-8 sm:text-lg md:mb-12 md:text-xl">
               AlgoMinds: Your AI-driven software development partner for maximum impact with maximum efficiency.
             </p>
 
             {/* CTA Button */}
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-indigo-600 font-bold text-sm sm:text-base rounded-full hover:bg-white/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-white/20 max-w-fit"
+              className="inline-flex max-w-fit items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-indigo-600 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:shadow-2xl hover:shadow-white/20 sm:px-8 sm:py-4 sm:text-base"
             >
               Book your strategy session
             </Link>
@@ -52,7 +52,7 @@ export function HeroRedesigned() {
         </div>
 
         {/* Bottom Section with Featured Clients and Awards */}
-        <div className="relative z-10 bg-gradient-to-t from-black/70 md:from-black/60 to-transparent px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-10 md:py-12 lg:py-16">
+        <div className="relative z-10 bg-gradient-to-t from-black/70 to-transparent px-4 py-8 sm:px-6 sm:py-10 md:from-black/60 md:px-8 md:py-12 lg:px-12 lg:py-16">
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Featured Clients */}
             <div className="col-span-1 sm:col-span-2 lg:col-span-1">
@@ -83,7 +83,7 @@ export function HeroRedesigned() {
       </div>
 
       {/* Navigation Arrow - Optional */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+      <div className="absolute bottom-4 left-1/2 z-10 hidden -translate-x-1/2 animate-bounce sm:bottom-6 md:bottom-8 md:block">
         <svg
           className="w-5 h-5 sm:w-6 sm:h-6 text-white"
           fill="none"

@@ -243,7 +243,7 @@ export function Navigation() {
           {/* Mobile Menu Content */}
           <SheetContent
             side="right"
-            className="w-80 border-l border-[#00E0C6]/20 bg-gradient-to-b from-[#0B1220] to-[#0F1A2E] p-0"
+            className="w-[min(100vw,22rem)] border-l border-[#00E0C6]/20 bg-gradient-to-b from-[#0B1220] to-[#0F1A2E] p-0"
           >
             <div className="flex flex-col h-full">
               {/* Mobile Menu Header */}
