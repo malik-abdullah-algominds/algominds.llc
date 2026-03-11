@@ -50,16 +50,10 @@ export function Navigation() {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0B1220]/95 backdrop-blur-xl shadow-2xl shadow-[#00E0C6]/10 border-b border-[#00E0C6]/20"
-          : "bg-gradient-to-b from-[#0B1220]/80 via-[#0F1A2E]/70 to-[#0B1220]/60 backdrop-blur-lg border-b border-[#00E0C6]/10"
+          ? "bg-black/95 backdrop-blur-xl border-b border-white/10"
+          : "bg-black/90 backdrop-blur-md border-b border-white/5"
       }`}
     >
-      {/* Animated gradient background for futuristic AI feel */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#00E0C6]/10 to-transparent blur-3xl rounded-full animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-[#00E0C6]/5 to-transparent blur-3xl rounded-full" />
-      </div>
-
       <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link

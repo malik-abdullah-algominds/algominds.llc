@@ -1,21 +1,75 @@
 'use client'
 
-import { useRef } from 'react'
 import Link from 'next/link'
+import { useCallback, useState } from 'react'
+import {
+  ArrowLeft,
+  ArrowRight,
+  BrainCircuit,
+  BriefcaseBusiness,
+  Boxes,
+  Code2,
+  Rocket,
+  ShieldCheck,
+} from 'lucide-react'
+
+const expertise = [
+  { icon: BrainCircuit, label: 'Artificial intelligence & data' },
+  { icon: Code2, label: 'Software development & QA' },
+  { icon: BriefcaseBusiness, label: 'Strategy & business consulting' },
+  { icon: Boxes, label: 'Enterprise platform implementation' },
+  { icon: Rocket, label: 'New product innovation' },
+  { icon: ShieldCheck, label: 'Cloud & security' },
+]
+
+const heroSlides = [
+  {
+    title: 'AI-Powered Global Digital Engineering Partner',
+    subtitle: 'Product Development • Digital Transformation • Agile Teams',
+  },
+  {
+    title: 'Build Future-Ready Digital Products Faster',
+    subtitle: 'MVP Engineering • Full-Scale Delivery • Continuous Innovation',
+  },
+  {
+    title: 'Modernize Legacy Systems with Confidence',
+    subtitle: 'Cloud Migration • Platform Re-Architecture • Performance at Scale',
+  },
+  {
+    title: 'Scale Dedicated Teams That Deliver Outcomes',
+    subtitle: 'Top Engineering Talent • Flexible Engagement • Predictable Velocity',
+  },
+  {
+    title: 'Design Intelligent Experiences Customers Love',
+    subtitle: 'UX Strategy • AI Personalization • Omnichannel Journeys',
+  },
+  {
+    title: 'Accelerate Enterprise Transformation with AI',
+    subtitle: 'Data Platforms • Automation • Measurable Business Impact',
+  },
+]
 
 export function HeroRedesigned() {
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  const goToPreviousSlide = useCallback(() => {
+    setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+  }, [])
+
+  const goToNextSlide = useCallback(() => {
+    setActiveSlide((prev) => (prev + 1) % heroSlides.length)
+  }, [])
+
+  const currentSlide = heroSlides[activeSlide]
 
   return (
-    <section className="relative flex w-full min-h-[100svh] flex-col overflow-hidden">
-      {/* Video Background */}
+    <section className="relative overflow-hidden bg-[#07080D] pt-20 text-white">
       <video
-        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover"
       >
         <source
           src="https://cdn.prod.website-files.com/6719ad0ceed6d5aa24a83d61%2F696ecc1f3ff5304a4fb2789b_Hero-video%20%281%29_mp4.mp4"
@@ -23,80 +77,80 @@ export function HeroRedesigned() {
         />
       </video>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/45 md:bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_25%,rgba(74,30,120,0.2),transparent_45%),radial-gradient(circle_at_85%_50%,rgba(45,140,145,0.26),transparent_50%)]" />
+      <div className="absolute -right-24 top-0 h-full w-[55%] opacity-55 [background:repeating-radial-gradient(circle_at_center,rgba(125,231,238,0.34)_0,rgba(125,231,238,0.34)_2px,transparent_8px,transparent_30px)]" />
 
-      {/* Content */}
-      <div className="relative z-10 flex h-full flex-col">
-        {/* Main Content */}
-        <div className="flex flex-1 flex-col justify-start px-4 pb-8 pt-24 sm:px-6 sm:pb-10 sm:pt-28 md:justify-center md:px-8 md:py-16 lg:px-12">
-          <div className="max-w-4xl">
-            {/* Main Heading */}
-            <h1 className="mb-4 text-4xl font-bold leading-tight tracking-tight text-white sm:mb-6 sm:text-5xl md:mb-8 md:text-6xl lg:text-7xl">
-              Redefine, scale, and multiply your business potential
+      <div className="relative mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
+        <div className="relative min-h-[430px] border-b border-white/10 pb-10 pt-10 sm:min-h-[480px] sm:pt-14 lg:pb-12 lg:pt-16">
+          <button
+            type="button"
+            aria-label="Previous slide"
+            onClick={goToPreviousSlide}
+            className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/30 p-2.5 text-white/90 transition hover:bg-white/10 lg:inline-flex"
+          >
+            <ArrowLeft className="h-6 w-6" />
+          </button>
+
+          <button
+            type="button"
+            aria-label="Next slide"
+            onClick={goToNextSlide}
+            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/30 p-2.5 text-white/90 transition hover:bg-white/10 lg:inline-flex"
+          >
+            <ArrowRight className="h-6 w-6" />
+          </button>
+
+          <div className="mx-auto w-full max-w-4xl lg:mx-20">
+            <h1 className="max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl lg:text-[64px] lg:leading-[1.05]">
+              {currentSlide.title}
             </h1>
 
-            {/* Subheading */}
-            <p className="mb-6 max-w-2xl text-base leading-relaxed text-white/90 sm:mb-8 sm:text-lg md:mb-12 md:text-xl">
-              AlgoMinds: Your AI-driven software development partner for maximum impact with maximum efficiency.
+            <p className="mt-4 max-w-3xl text-lg text-white/85 sm:text-2xl">
+              {currentSlide.subtitle}
             </p>
 
-            {/* CTA Button */}
             <Link
               href="/contact"
-              className="inline-flex max-w-fit items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-indigo-600 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:shadow-2xl hover:shadow-white/20 sm:px-8 sm:py-4 sm:text-base"
+              className="mt-8 inline-flex items-center rounded-xl border border-white/50 px-7 py-3 text-lg font-medium text-white transition hover:bg-white hover:text-black"
             >
-              Book your strategy session
+              Let&apos;s connect
             </Link>
-          </div>
-        </div>
 
-        {/* Bottom Section with Featured Clients and Awards */}
-        <div className="relative z-10 bg-gradient-to-t from-black/70 to-transparent px-4 py-8 sm:px-6 sm:py-10 md:from-black/60 md:px-8 md:py-12 lg:px-12 lg:py-16">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Featured Clients */}
-            <div className="col-span-1 sm:col-span-2 lg:col-span-1">
-              <p className="text-white/70 text-xs sm:text-sm font-semibold tracking-wide mb-4 sm:mb-6">
-                Featured Clients
-              </p>
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                {/* Client logos - replace with your actual logos */}
-                <div className="text-white text-xs sm:text-sm opacity-75">UNICEF</div>
-                <div className="text-white text-xs sm:text-sm opacity-75">University</div>
-                <div className="text-white text-xs sm:text-sm opacity-75">Nordstrom</div>
-              </div>
-            </div>
-
-            {/* Awards & Partnerships */}
-            <div className="col-span-1 sm:col-span-2 lg:col-span-2 lg:text-right">
-              <p className="text-white/70 text-xs sm:text-sm font-semibold tracking-wide mb-4 sm:mb-6">
-                Awards & Partnerships
-              </p>
-              <div className="flex flex-wrap gap-3 sm:gap-4 lg:justify-end">
-                {/* Award logos - replace with your actual logos */}
-                <div className="text-white text-xs sm:text-sm opacity-75">ISO Certified</div>
-                <div className="text-white text-xs sm:text-sm opacity-75">Award Winner</div>
-              </div>
+            <div className="mt-10 flex items-center gap-4 sm:justify-center lg:mt-12">
+              {heroSlides.map((slide, index) => (
+                <button
+                  key={slide.title}
+                  type="button"
+                  onClick={() => setActiveSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                  aria-current={index === activeSlide}
+                  className={`h-3 w-3 rounded-full transition ${
+                    index === activeSlide ? 'bg-lime-400' : 'bg-white/85 hover:bg-white'
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Navigation Arrow - Optional */}
-      <div className="absolute bottom-4 left-1/2 z-10 hidden -translate-x-1/2 animate-bounce sm:bottom-6 md:bottom-8 md:block">
-        <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
+        <div className="pt-8 sm:pt-10">
+          <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Our expertise</h2>
+
+          <div className="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
+            {expertise.map((item) => {
+              const Icon = item.icon
+              return (
+                <div key={item.label} className="group rounded-lg border border-white/10 bg-white/[0.02] p-4 transition hover:border-lime-400/50 hover:bg-white/[0.05]">
+                  <Icon className="h-9 w-9 text-lime-400" />
+                  <p className="mt-4 text-base leading-snug text-white/90 underline decoration-white/30 underline-offset-4 group-hover:text-white">
+                    {item.label}
+                  </p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
       </div>
     </section>
   )
