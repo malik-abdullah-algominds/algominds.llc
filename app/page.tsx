@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/navigation"
 import { HeroRedesigned } from "@/components/hero-redesigned"
-import { StatsSection } from "@/components/stats-section"
 import { WhyChoose } from "@/components/why-choose"
 import { ServicesSection } from "@/components/services-section"
 import { SolutionsCarousel } from "@/components/solutions-carousel"
@@ -13,7 +12,6 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Navigation />
       <HeroRedesigned />
-      <StatsSection />
       <WhyChoose />
       <ServicesSection />
       <SolutionsCarousel />
