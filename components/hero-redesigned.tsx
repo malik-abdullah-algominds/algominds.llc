@@ -1,10 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import {
-  ArrowLeft,
-  ArrowRight,
   BrainCircuit,
   BriefcaseBusiness,
   Boxes,
@@ -52,14 +50,6 @@ const heroSlides = [
 export function HeroRedesigned() {
   const [activeSlide, setActiveSlide] = useState(0)
 
-  const goToPreviousSlide = useCallback(() => {
-    setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
-  }, [])
-
-  const goToNextSlide = useCallback(() => {
-    setActiveSlide((prev) => (prev + 1) % heroSlides.length)
-  }, [])
-
   const currentSlide = heroSlides[activeSlide]
 
   return (
@@ -83,24 +73,6 @@ export function HeroRedesigned() {
 
       <div className="relative mx-auto max-w-7xl px-4 pb-12 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
         <div className="relative min-h-[430px] border-b border-white/10 pb-10 pt-10 sm:min-h-[480px] sm:pt-14 lg:pb-12 lg:pt-16">
-          <button
-            type="button"
-            aria-label="Previous slide"
-            onClick={goToPreviousSlide}
-            className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/30 p-2.5 text-white/90 transition hover:bg-white/10 lg:inline-flex"
-          >
-            <ArrowLeft className="h-6 w-6" />
-          </button>
-
-          <button
-            type="button"
-            aria-label="Next slide"
-            onClick={goToNextSlide}
-            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-white/30 p-2.5 text-white/90 transition hover:bg-white/10 lg:inline-flex"
-          >
-            <ArrowRight className="h-6 w-6" />
-          </button>
-
           <div className="mx-auto w-full max-w-4xl lg:mx-20">
             <h1 className="max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl lg:text-[64px] lg:leading-[1.05]">
               {currentSlide.title}
