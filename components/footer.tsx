@@ -41,9 +41,9 @@ const footerColumns = {
 }
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Facebook, href: "https://www.facebook.com/algomindlllc", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/algomindsllc/", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/algominds-llc/", label: "LinkedIn" },
 ]
 
 export function Footer() {
@@ -170,6 +170,8 @@ export function Footer() {
                 <Link
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-white/10 p-2.5 transition-all duration-300 hover:bg-white/20 hover:shadow-lg hover:shadow-white/10 border border-white/10 hover:border-white/20"
                   aria-label={social.label}
                 >

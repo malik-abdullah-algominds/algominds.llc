@@ -111,7 +111,9 @@ export default function RootLayout({
               url: "https://algominds.live",
               logo: "https://algominds.live/favicon-32x32.png",
               sameAs: [
-                "https://www.linkedin.com/company/algominds",
+                "https://www.linkedin.com/company/algominds-llc/",
+                "https://www.instagram.com/algomindsllc/",
+                "https://www.facebook.com/algomindlllc",
               ],
             }),
           }}
