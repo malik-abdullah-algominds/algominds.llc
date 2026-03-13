@@ -109,6 +109,7 @@ export function Footer() {
                   >
                     {link.label}
                   </Link>
+                  
                 </li>
               ))}
             </ul>
@@ -126,7 +127,7 @@ export function Footer() {
                   >
                     {link.label}
                   </Link>
-                </li>
+                </li>i
               ))}
             </ul>
           </div>
