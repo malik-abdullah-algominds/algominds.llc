@@ -4,11 +4,20 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { buildPageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Services | Algominds LLC",
-  description: "Explore our comprehensive range of technology services including custom software development, AI & ML, web and mobile development, and more.",
-}
+export const metadata: Metadata = buildPageMetadata({
+  title: "Software Development Services",
+  description:
+    "Explore AlgoMinds software development services including AI/ML, web, mobile, DevOps, cloud, and quality engineering.",
+  path: "/services",
+  keywords: [
+    "software development services",
+    "AI ML development",
+    "mobile app development company",
+    "DevOps consulting services",
+  ],
+})
 
 const servicesLeft = [
   {

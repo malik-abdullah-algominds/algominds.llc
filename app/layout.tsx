@@ -26,7 +26,12 @@ export const metadata: Metadata = {
   authors: [{ name: "AlgoMinds LLC" }],
   creator: "AlgoMinds LLC",
   publisher: "AlgoMinds LLC",
-  generator: 'v0.app',
+  alternates: {
+    canonical: "/",
+  },
+  category: "technology",
+  applicationName: "AlgoMinds LLC",
+  manifest: "/site.webmanifest",
   icons: {
     icon: [
       {
@@ -59,9 +64,9 @@ export const metadata: Metadata = {
     siteName: "AlgoMinds LLC",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/android-chrome-512x512.png",
+        width: 512,
+        height: 512,
         alt: "AlgoMinds LLC",
       },
     ],
@@ -73,11 +78,18 @@ export const metadata: Metadata = {
     title: "AlgoMinds LLC",
     description:
       "AI Development, Custom Software, and Web Solutions for modern businesses.",
-    images: ["/og-image.png"],
+    images: ["/android-chrome-512x512.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 }
 

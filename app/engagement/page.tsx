@@ -4,11 +4,19 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Check } from "lucide-react"
+import { buildPageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Engagement Models | Algominds LLC",
-  description: "Flexible engagement models including dedicated teams, staff augmentation, project outsourcing, and CTO as a Service.",
-}
+export const metadata: Metadata = buildPageMetadata({
+  title: "Flexible Engagement Models",
+  description:
+    "Choose dedicated teams, staff augmentation, project outsourcing, or CTO-as-a-Service engagement models with AlgoMinds.",
+  path: "/engagement",
+  keywords: [
+    "dedicated development team",
+    "staff augmentation services",
+    "CTO as a service",
+  ],
+})
 
 const models = [
   {

@@ -3,11 +3,20 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { buildPageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Solutions | Algominds LLC",
-  description: "Industry-specific solutions for Retail, Healthcare, Education, Insurance, Travel, Social Platforms, and Sports.",
-}
+export const metadata: Metadata = buildPageMetadata({
+  title: "Industry Solutions for Growth",
+  description:
+    "Discover industry-focused digital solutions for healthcare, retail, education, travel, insurance, and sports.",
+  path: "/solutions",
+  keywords: [
+    "industry software solutions",
+    "healthcare software solutions",
+    "retail digital transformation",
+    "education technology solutions",
+  ],
+})
 
 const solutions = [
   {

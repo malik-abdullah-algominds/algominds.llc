@@ -2,11 +2,15 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { buildPageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Portfolio | Algominds LLC",
-  description: "Explore our portfolio of successful projects across AI, cybersecurity, healthcare, and more.",
-}
+export const metadata: Metadata = buildPageMetadata({
+  title: "Portfolio & Case Studies",
+  description:
+    "Explore case studies and portfolio projects delivered by AlgoMinds across AI, healthcare, social platforms, and enterprise systems.",
+  path: "/portfolio",
+  keywords: ["software portfolio", "AI case studies", "custom app success stories"],
+})
 
 const projects = [
   {

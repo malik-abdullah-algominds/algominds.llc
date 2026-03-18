@@ -3,11 +3,15 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { buildPageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "About Us | Algominds LLC",
-  description: "Algominds LLC is a technology solutions company specializing in custom software development, artificial intelligence, and digital transformation.",
-}
+export const metadata: Metadata = buildPageMetadata({
+  title: "About AlgoMinds LLC",
+  description:
+    "Learn about AlgoMinds LLC, our mission, values, leadership approach, and the team behind enterprise software and AI solutions.",
+  path: "/about",
+  keywords: ["about algominds", "software company profile", "AI consulting team"],
+})
 
 const values = [
   { title: "Quality & reliability", description: "We never compromise on the quality of our deliverables" },
