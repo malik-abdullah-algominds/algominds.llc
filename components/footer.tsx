@@ -46,6 +46,13 @@ const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/algominds-llc/", label: "LinkedIn" },
 ]
 
+const footerSections = [
+  { title: "Engineering", links: footerColumns.engineering },
+  { title: "Artificial Intelligence", links: footerColumns.ai },
+  { title: "Engagement Models", links: footerColumns.engagement },
+  { title: "About", links: footerColumns.about },
+]
+
 export function Footer() {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -80,74 +87,23 @@ export function Footer() {
     >
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:gap-16 lg:grid-cols-5 md:grid-cols-2 sm:grid-cols-1">
-          {/* Engineering */}
-          <div className="transition-transform duration-500 hover:translate-y-[-2px]">
-            <h4 className="mb-8 text-xs font-semibold tracking-widest text-white/90 uppercase">Engineering</h4>
-            <ul className="space-y-4">
-              {footerColumns.engineering.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/80 transition-all duration-300 hover:text-white hover:pl-1 inline-flex items-center"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Artificial Intelligence */}
-          <div className="transition-transform duration-500 hover:translate-y-[-2px]">
-            <h4 className="mb-8 text-xs font-semibold tracking-widest text-white/90 uppercase">Artificial Intelligence</h4>
-            <ul className="space-y-4">
-              {footerColumns.ai.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/80 transition-all duration-300 hover:text-white hover:pl-1 inline-flex items-center"
-                  >
-                    {link.label}
-                  </Link>
-                  
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Engagement Models */}
-          <div className="transition-transform duration-500 hover:translate-y-[-2px]">
-            <h4 className="mb-8 text-xs font-semibold tracking-widest text-white/90 uppercase">Engagement Models</h4>
-            <ul className="space-y-4">
-              {footerColumns.engagement.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/80 transition-all duration-300 hover:text-white hover:pl-1 inline-flex items-center"
-                  >
-                    {link.label}
-                  </Link>
-                </li>i
-              ))}
-            </ul>
-          </div>
-
-          {/* About */}
-          <div className="transition-transform duration-500 hover:translate-y-[-2px]">
-            <h4 className="mb-8 text-xs font-semibold tracking-widest text-white/90 uppercase">About</h4>
-            <ul className="space-y-4">
-              {footerColumns.about.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/80 transition-all duration-300 hover:text-white hover:pl-1 inline-flex items-center"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {footerSections.map((section) => (
+            <div key={section.title} className="transition-transform duration-500 hover:translate-y-[-2px]">
+              <h4 className="mb-8 text-xs font-semibold tracking-widest text-white/90 uppercase">{section.title}</h4>
+              <ul className="space-y-4">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-white/80 transition-all duration-300 hover:text-white hover:pl-1 inline-flex items-center"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           {/* Subscribe */}
           <div className="transition-transform duration-500 hover:translate-y-[-2px]">
@@ -171,7 +127,7 @@ export function Footer() {
                 <Link
                   key={social.label}
                   href={social.href}
-                  target="_blank"
+                  target="_blank" 
                   rel="noopener noreferrer"
                   className="rounded-full bg-white/10 p-2.5 transition-all duration-300 hover:bg-white/20 hover:shadow-lg hover:shadow-white/10 border border-white/10 hover:border-white/20"
                   aria-label={social.label}
